@@ -1,3 +1,12 @@
+SELECT film.film_id,
+       film.title,
+       language.language_id,
+       language.name
+FROM film
+JOIN language ON film.language_id = language.language_id
+WHERE (film.title ILIKE 'K%' OR film.title ILIKE 'Q%')
+  AND language.name = 'English'
+ORDER BY film.title ASC;
 /*
  * The music of Queen and Kris Kristofferson have seen an unlikely resurgence.
  * As an unintended consequence, films starting with the letters K and Q have also soared in popularity.

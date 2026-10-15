@@ -1,3 +1,7 @@
+SELECT last_name, COUNT(*) AS last_name_count
+FROM actor
+GROUP BY last_name
+ORDER BY last_name_count DESC;
 /*
  * List the last names of actors, as well as how many actors have that last name.
  * HINT:

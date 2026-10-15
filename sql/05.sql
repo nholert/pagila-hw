@@ -1,3 +1,6 @@
+SELECT COUNT(*)
+FROM film
+WHERE rating = 'G';
 /*
  * Count the total number of G rated films.
  * HINT:

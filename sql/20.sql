@@ -1,3 +1,11 @@
+SELECT film.title,
+       COUNT(film_actor.actor_id) OVER (
+           PARTITION BY film.film_id
+       ) AS actor_count
+FROM film
+JOIN film_actor ON film.film_id = film_actor.film_id
+ORDER BY actor_count DESC,
+         film.title COLLATE "C" ASC;
 /*
  * For each film, show how many actors appear in it.
  *
